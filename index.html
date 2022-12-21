@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASÍNCRONA 14-JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+    <form ng-app="myApp" ng-controller="myCtrl" name="myForm" novalidate>
+
+        <h1>SALARIO DE TRABAJADORES</h1>
+        <h3>Código: <input type="text" name="codigo" ng-model="codigo" required>
+            <p ng-show="myForm.codigo.$touched && myForm.codigo.$invalid"></p>
+        </h3>
+
+        <h3>Horas trabajadas: <input type="number" name="horas" ng-model="horas" required>
+            <p ng-show="myForm.horas.$touched  && myForm.horas.$invalid"></p>
+        </h3>
+
+        <h3>Tarifa por hora trabajada: <input type="number" name="tarifa" ng-model="tarifa" required>
+            <p ng-show="myForm.tarifa.$touched  && myForm.tarifa.$invalid"></p>
+
+        </h3>
+
+        <h3>Salario Básico: S/. {{calcularTarifa()}}</h3>
+        <h3>{{descuento}} % Descuento: S/. {{calcularDescuento()}}</h3>
+        <h3>Salario Neto es de: S/. {{Pago()}}</h3>
+
+    </form>
+</body>
+<script src="script14.js"></script>
+</html>
